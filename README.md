@@ -106,7 +106,7 @@ gradle clean build real -DdeviceHost=real
 <img width="70%" title="Telegram Notifications" src="media/screens/Bot.png">
 </p>
 
-### <img width="4%" style="vertical-align:middle" title="Selenoid" src="media/logo/Selenoid.svg"> Видео примера запуска тестов
+### Видео примера запуска тестов
 
 В отчетах Allure для тестов на площадке BrowserStack прикреплен не только скриншот, но и видео прохождения теста
 <p align="center">
