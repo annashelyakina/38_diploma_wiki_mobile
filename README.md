@@ -39,7 +39,6 @@
 * фреймворк для тестирования - <code>Selenide</code>;
 * сборщик - <code>Gradle</code>; 
 * фреймворк модульного тестирования - <code>JUnit 5</code>;
-* запуск браузеров с помошью <code>Selenoid</code>;
 * джоба для удалённого запуска в - <code>Jenkins</code>;
 * отчёт в <code>Allure Report</code>;
 * отправка результатов при помощи бота в - <code>Telegram</code>;
