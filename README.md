@@ -67,7 +67,7 @@ gradle clean build real -DdeviceHost=real
 </p>
 После выполнения сборки, в блоке <code>История сборок</code> напротив номера сборки появятся значки <code>Allure Report</code> и <code>Allure TestOps</code>, при клике на которые откроется страница с сформированным html-отчетом и тестовой документацией соответственно.
 
-## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> [Allure отчет](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-diploma_kaiten/allure/)
+## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> [Allure отчет](https://jenkins.autotests.cloud/job/038-Anna_Shelyakina-diploma_wiki_mobile/2/allure/)
 ### Overview
 
 <p align="center">
