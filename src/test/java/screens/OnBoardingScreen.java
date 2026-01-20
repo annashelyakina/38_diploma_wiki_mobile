@@ -1,5 +1,6 @@
 package screens;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import tests.Constants;
 
@@ -10,80 +11,88 @@ import static io.appium.java_client.AppiumBy.id;
 
 public class OnBoardingScreen {
 
+    private final SelenideElement
+        primaryTextView = $(id("org.wikipedia.alpha:id/primaryTextView")),
+        onboardingForwardButton = $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")),
+        onboardingDoneButton = $(id("org.wikipedia.alpha:id/fragment_onboarding_done_button")),
+        searchFieldRu = $(accessibilityId(Constants.RU_TEXT_IN_SEARCH_FIELD)),
+        searchFieldEng = $(accessibilityId(Constants.ENG_TEXT_IN_SEARCH_FIELD))
+    ;
+
     @Step("Check first onboarding screen in Russian")
     public OnBoardingScreen checkFirstOnboardingScreenRu(){
-        $(id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(matchText("^.*"+ Constants.RU_TEXT_IN_FIRST_SCREEN +".*?$"));
-        $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        primaryTextView.shouldHave(matchText("^.*"+ Constants.RU_TEXT_IN_FIRST_SCREEN +".*?$"));
+        onboardingForwardButton.click();
 
         return this;
     }
 
     @Step("Check second onboarding screen in Russian")
     public OnBoardingScreen checkSecondOnboardingScreenRu(){
-        $(id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text(Constants.RU_TEXT_IN_SECOND_SCREEN));
-        $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        primaryTextView.shouldHave(text(Constants.RU_TEXT_IN_SECOND_SCREEN));
+        onboardingForwardButton.click();
 
         return this;
     }
 
     @Step("Check third onboarding screen in Russian")
     public OnBoardingScreen checkThirdOnboardingScreenRu(){
-        $(id("org.wikipedia.alpha:id/primaryTextView")).shouldBe(text(Constants.RU_TEXT_IN_THIRD_SCREEN));
-        $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        primaryTextView.shouldBe(text(Constants.RU_TEXT_IN_THIRD_SCREEN));
+        onboardingForwardButton.click();
 
         return this;
     }
 
     @Step("Check fourth onboarding screen in Russian")
     public OnBoardingScreen checkFourthOnboardingScreenRu(){
-        $(id("org.wikipedia.alpha:id/primaryTextView")).shouldBe(text(Constants.RU_TEXT_IN_FOURTH_SCREEN));
-        $(id("org.wikipedia.alpha:id/fragment_onboarding_done_button")).click();
+        primaryTextView.shouldBe(text(Constants.RU_TEXT_IN_FOURTH_SCREEN));
+        onboardingDoneButton.click();
 
         return this;
     }
 
     @Step("Verify search field in Russian")
     public OnBoardingScreen verifySearchFieldRu(){
-        $(accessibilityId(Constants.RU_TEXT_IN_SEARCH_FIELD)).shouldBe(visible);
+        searchFieldRu.shouldBe(visible);
 
         return this;
     }
 
     @Step("Check first onboarding screen in English")
     public OnBoardingScreen checkFirstOnboardingScreenEng(){
-        $(id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(matchText("^.*"+ Constants.ENG_TEXT_IN_FIRST_SCREEN +".*?$"));
-        $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        primaryTextView.shouldHave(matchText("^.*"+ Constants.ENG_TEXT_IN_FIRST_SCREEN +".*?$"));
+        onboardingForwardButton.click();
 
         return this;
     }
 
     @Step("Check second onboarding screen in English")
     public OnBoardingScreen checkSecondOnboardingScreenEng(){
-        $(id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text(Constants.ENG_TEXT_IN_SECOND_SCREEN));
-        $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        primaryTextView.shouldHave(text(Constants.ENG_TEXT_IN_SECOND_SCREEN));
+        onboardingForwardButton.click();
 
         return this;
     }
 
     @Step("Check third onboarding screen in English")
     public OnBoardingScreen checkThirdOnboardingScreenEng(){
-        $(id("org.wikipedia.alpha:id/primaryTextView")).shouldBe(text(Constants.ENG_TEXT_IN_THIRD_SCREEN));
-        $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        primaryTextView.shouldBe(text(Constants.ENG_TEXT_IN_THIRD_SCREEN));
+        onboardingForwardButton.click();
 
         return this;
     }
 
     @Step("Check fourth onboarding screen in English")
     public OnBoardingScreen checkFourthOnboardingScreenEng(){
-        $(id("org.wikipedia.alpha:id/primaryTextView")).shouldBe(text(Constants.ENG_TEXT_IN_FOURTH_SCREEN));
-        $(id("org.wikipedia.alpha:id/fragment_onboarding_done_button")).click();
+        primaryTextView.shouldBe(text(Constants.ENG_TEXT_IN_FOURTH_SCREEN));
+        onboardingDoneButton.click();
 
         return this;
     }
 
     @Step("Verify search field in English")
     public OnBoardingScreen verifySearchFieldEng(){
-        $(accessibilityId(Constants.ENG_TEXT_IN_SEARCH_FIELD)).shouldBe(visible);
+        searchFieldEng.shouldBe(visible);
 
         return this;
     }
